@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/* 
+* Copyright (c) 2012 Modus Operandi, Inc. 
+* SBIR DATA RIGHTS 
+* Contract No. H92222-12-0086 shooter2DIB 
+* Contractor Name: Modus Operandi, Inc. S. Harbor City Blvd., Suite 400, Melbourne, FL 32901-1936 
+* Expiration of SBIR Data Rights Period: September 30, 2017 
+* 
+* The Government's rights to use, modify, reproduce, release, perform, 
+* display, or disclose technical data or computer software marked with this 
+* legend are restricted during the period shown as provided in paragraph 
+* (b)(4) of the Rights in Non-commercial Technical Data and Computer 
+* Software Small Business Innovative Research (SBIR) Program clause 
+* contained in the above identified contract. No restrictions apply after 
+* the expiration date shown above. Any reproduction of technical data, 
+* computer software, or portions thereof marked with this legend must also 
+* reproduce the markings. 
+*/ 
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>darrengriffith.net.java8</groupId>
+    <artifactId>java8</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    
+    <packaging>pom</packaging>
+    
+    <name>Java8</name>
+    <description>Various samples of new Java 8 features</description>
+    <organization>
+        <name>Darren Griffith</name>
+        <url>https://www.linkedin.com/in/griffithdarren</url>
+    </organization>
+    
+    <properties>
+    </properties>
+
+    <modules>
+        <module>samples</module>
+    </modules>
+
+    <!-- NOTE: The properties snap.scm.connection.url, snapshots.repository.url 
+    and releases.repository.url should be defined in your .m2/settings.xml file. -->
+    <scm>
+        <connection>${snap.scm.connection.url}</connection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>${snapshots.repository.url}</url>
+        </snapshotRepository>
+        <repository>
+            <id>releases</id>
+            <url>${releases.repository.url}</url>
+        </repository>
+    </distributionManagement>
+    
+    <dependencyManagement>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.3</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                        <maxmem>4096M</maxmem>
+                        <fork>${compiler.fork}</fork>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                        <showDeprecation>true</showDeprecation>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>2.4</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
