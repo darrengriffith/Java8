@@ -17,7 +17,7 @@
         
     <packaging>jar</packaging>
         
-    <name>functional-interfaces</name>
+    <name>java8.samples</name>
     <description>Using new functional interfaces</description>
     <organization>
         <name>Darren Griffith</name>
