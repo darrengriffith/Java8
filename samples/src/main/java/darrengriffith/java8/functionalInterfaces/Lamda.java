@@ -3,11 +3,14 @@ package darrengriffith.java8.functionalInterfaces;
 public class Lamda {
 
     public static void main(String[] args) {
+        
         System.out.println("\n--- Functional Interfaces ---\n");
         
         //
         // No Args
         //
+        System.out.println("\n~~ Lamda Functions ~~");
+        
         LamdaFunction lamdaObject = () -> System.out.println("The Lamda Function Works");
         lamdaObject.lambdaFunction();
         
@@ -32,12 +35,16 @@ public class Lamda {
         //
         // Lamda vs Inner Class
         //
+        System.out.println("\n~~ Lamba vs Inner Class ~~");
+        
         InnerClassVsLamda.executeInnerClass();
         InnerClassVsLamda.executeLamda();
         
         //
         // ForEach
         //
+        System.out.println("\n~~ ForEach ~~");
+        
         LamdaForEach fe = new LamdaForEach();
         fe.executeFor();
         fe.executeForEach();
@@ -45,8 +52,26 @@ public class Lamda {
         //
         // Predicate
         //
+        System.out.println("\n~~ Predicates ~~");
+        
         LamdaPredicate predicate = new LamdaPredicate();
         predicate.executeInnerClass();
         predicate.executeLamda();
+        
+        //
+        // Method References
+        //
+        System.out.println("\n~~ Method References ~~");
+        
+        MethodReferences mr = new MethodReferences();
+        mr.execute();
+        
+        //
+        // Default Interface Method
+        //
+        System.out.println("\n~~ Default Methods ~~");
+        
+        DefaultMethods dm = new DefaultMethods();
+        dm.execute();
     }
 }
